@@ -52,6 +52,7 @@
     <Compile Include="Lenovo.cs" />
     <Compile Include="Problem_AS.cs" />
     <Compile Include="Problem_AM.cs" />
+    <Compile Include="IEEEHKN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
