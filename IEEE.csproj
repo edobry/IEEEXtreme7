@@ -53,6 +53,8 @@
     <Compile Include="Problem_AS.cs" />
     <Compile Include="Problem_AM.cs" />
     <Compile Include="IEEEHKN.cs" />
+    <Compile Include="Problem_AA.cs" />
+    <Compile Include="Problem_AR.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
