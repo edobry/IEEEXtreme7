@@ -48,6 +48,11 @@ class Solution
         try
         {
             var args = input.Split(' ');
+            if (args.Length > 20)
+            {
+                Console.WriteLine("ERROR");
+                return;
+            }
 
             var inputs = new List<Tuple<ushort, Operator>>();
             for (var i = 1; i < args.Length; i += 2)
