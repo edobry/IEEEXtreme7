@@ -4,9 +4,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.IO;
-using Newtonsoft.Json;
 
 class IEEEHKN
 {
@@ -21,15 +21,22 @@ class IEEEHKN
 
     static bool IsPalindrome(int x)
     {
-        var ba = new BitArray(new[] {x});
-        var bits = new bool[ba.Length];
-        ba.CopyTo(bits, 0);
-
-        bits = bits.Reverse().SkipWhile(b => !b).ToArray();
-
-        for (var i = 0; i < bits.Length / 2; i++)
+        var ba = new BitArray(new[] { x });
+        var inPad = true;
+        var realEnd = 0;
+        for (var i = ba.Length - 1; i >= 0; i--)
         {
-            if (bits[i] != bits[bits.Length - i - 1])
+            if (inPad)
+            {
+                if (ba[i])
+                {
+                    inPad = false;
+                    realEnd = i;
+                }
+                else continue;
+            }
+
+            if (ba[i] != ba[realEnd - i])
                 return false;
         }
 
